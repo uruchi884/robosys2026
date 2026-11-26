@@ -30,9 +30,9 @@ out=$(./csvstat 1 </dev/null 2>/dev/null)
 [ "$out" = "" ] || ng "$LINENO"
 
 ### NON-NUMERIC INPUT ###
-out=$(printf '1\nabc\n' | ./csvstat 1 2>/dev/null)
+err=$(printf '1\nabc\n' | ./csvstat 1 2>&1 >/dev/null)
 [ "$?" = 2 ] || ng "$LINENO"
-[ "$out" = "" ] || ng "$LINENO"
+[ -n "$err" ] || ng "$LINENO"
 
 ### MISSING COLUMN ###
 out=$(printf '1,2\n' | ./csvstat 3 2>/dev/null)
