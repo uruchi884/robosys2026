@@ -10,7 +10,7 @@ ng () {
 res=0
 
 ### NORMAL INPUT ###
-out=$(printf 'time,value\n0,2\n1,4\n2,6\n' | ./csvstat 2)
+out=$(printf '0,2\n1,4\n2,6\n' | ./csvstat 2)
 [ "$?" = 0 ] || ng "$LINENO"
 [ "$out" = '{"count": 3, "min": 2.0, "max": 6.0, "mean": 4.0, "rms": 4.320493798938574}' ] || ng "$LINENO"
 
