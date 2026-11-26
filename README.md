@@ -102,3 +102,12 @@ $ bash ./test.bash
 - 参考資料: [ロボットシステム学 第3回](https://tarolab-cit.github.io/lectures/robosys2026/lecture03.html)（標準入出力）、[第5回](https://tarolab-cit.github.io/lectures/robosys2026/lecture05.html)（著作権・ライセンス）、[第6回](https://tarolab-cit.github.io/lectures/robosys2026/lecture06.html)（テスト）、[第7回](https://tarolab-cit.github.io/lectures/robosys2026/lecture07.html)（GitHub Actions・README）。
 - `csvstat` は独自に作成したコマンドであり、講義資料のコードを転用していません。
 - 既存の `plus_stdin` はロボットシステム学第3回の標準入力の例を基にしたものです。講義資料は [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) で公開されています。講義資料のオリジナル作者は [上田隆一](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)、本年度資料の改変者は鈴木太郎です。
+
+## License and Acknowledgements
+
+- Copyright (c) 2026 Hayashi Masayuki
+- Licensed under the BSD 3-Clause License. See [LICENSE](LICENSE).
+- The implementation uses Python standard-library modules: `argparse`, `csv`, `json`, `math`, and `sys`.
+- Reference materials: [Robotics Systems Lecture 3](https://tarolab-cit.github.io/lectures/robosys2026/lecture03.html) (standard input/output), [Lecture 5](https://tarolab-cit.github.io/lectures/robosys2026/lecture05.html) (copyright and licenses), [Lecture 6](https://tarolab-cit.github.io/lectures/robosys2026/lecture06.html) (testing), and [Lecture 7](https://tarolab-cit.github.io/lectures/robosys2026/lecture07.html) (GitHub Actions and README).
+- `csvstat` is an original command and does not copy code from the lecture slides.
+- The existing `plus_stdin` is based on the standard-input example in Lecture 3. The lecture materials are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The original author is [Ryuichi Ueda](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025), and the current course slides were adapted by Taro Suzuki.
