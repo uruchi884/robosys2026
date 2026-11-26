@@ -43,7 +43,7 @@ $ printf 'time,value\n0,10\n1,20\n2,30\n' | ./csvstat 2 --header
 ### テスト
 
 ```sh
-$ python3 -m unittest discover -v
+$ python3 -m unittest discover -s test -v
 ```
 
 ## English
@@ -87,7 +87,7 @@ Invalid or missing numeric data is reported to standard error, and the command e
 ### Tests
 
 ```sh
-$ python3 -m unittest discover -v
+$ python3 -m unittest discover -s test -v
 ```
 
 ## License
