@@ -43,7 +43,7 @@ $ printf 'time,value\n0,10\n1,20\n2,30\n' | ./csvstat 2 --header
 ### テスト
 
 ```sh
-$ python3 -m unittest discover -s test -v
+$ bash ./test.bash
 ```
 
 ## English
@@ -87,9 +87,13 @@ Invalid or missing numeric data is reported to standard error, and the command e
 ### Tests
 
 ```sh
-$ python3 -m unittest discover -s test -v
+$ bash ./test.bash
 ```
 
-## License
+## 著作権・ライセンス・謝辞
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE).
+- Copyright (c) 2026 Hayashi Masayuki
+- このソフトウェアは BSD 3-Clause License の下で公開します。詳細は [LICENSE](LICENSE) を参照してください。
+- 実装には Python の標準ライブラリ `argparse`、`csv`、`json`、`math`、`sys` を使用しています。
+- 参考資料: [ロボットシステム学 第3回](https://tarolab-cit.github.io/lectures/robosys2026/lecture03.html)（標準入出力）、[第5回](https://tarolab-cit.github.io/lectures/robosys2026/lecture05.html)（著作権・ライセンス）、[第6回](https://tarolab-cit.github.io/lectures/robosys2026/lecture06.html)（テスト）、[第7回](https://tarolab-cit.github.io/lectures/robosys2026/lecture07.html)（GitHub Actions・README）。
+- 講義資料のコードは転用していません。
