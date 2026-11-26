@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2026 Hayashi Masayuki
+# SPDX-License-Identifier: MIT
+
+"""Calculate summary statistics for one numeric column in CSV data."""
+
+import argparse
+import csv
+import json
+import math
+import sys
+
+
+def calculate(values):
+    """Return count, minimum, maximum, mean, and RMS for values."""
+    count = len(values)
+    if count == 0:
+        raise ValueError("no numeric data was found")
+
+    total = math.fsum(values)
+    squares = math.fsum(value * value for value in values)
+    return {
+        "count": count,
+        "min": min(values),
+        "max": max(values),
+        "mean": total / count,
+        "rms": math.sqrt(squares / count),
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Calculate statistics for a numeric CSV column from standard input."
+    )
+    parser.add_argument(
+        "column",
+        type=int,
+        help="1-based column number to analyze",
+    )
+    parser.add_argument(
+        "--header",
+        action="store_true",
+        help="skip the first CSV row",
+    )
+    args = parser.parse_args()
+
+    if args.column < 1:
+        parser.error("column must be 1 or greater")
+
+    values = []
+    try:
+        reader = csv.reader(sys.stdin)
+        for line_number, row in enumerate(reader, start=1):
+            if line_number == 1 and args.header:
+                continue
+            if not row or all(cell.strip() == "" for cell in row):
+                continue
+            if len(row) < args.column:
+                raise ValueError(
+                    f"line {line_number}: column {args.column} does not exist"
+                )
+            try:
+                value = float(row[args.column - 1].strip())
+            except ValueError as error:
+                raise ValueError(
+                    f"line {line_number}: column {args.column} is not numeric"
+                ) from error
+            if not math.isfinite(value):
+                raise ValueError(
+                    f"line {line_number}: non-finite values are not supported"
+                )
+            values.append(value)
+
+        result = calculate(values)
+    except (ValueError, csv.Error) as error:
+        print(f"csvstat: {error}", file=sys.stderr)
+        return 2
+
+    print(json.dumps(result, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
