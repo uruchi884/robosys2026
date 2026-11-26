@@ -16,4 +16,4 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run tests
-        run: python3 -m unittest discover -v
+        run: python3 -m unittest discover -s test -v
