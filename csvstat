@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 Hayashi Masayuki
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: BSD-3-Clause
 
 """Calculate summary statistics for one numeric column in CSV data."""
 
