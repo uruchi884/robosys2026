@@ -1,5 +1,7 @@
 # csvstat
 
+![test](https://github.com/uruchi884/robosys2026/actions/workflows/test.yml/badge.svg)
+
 [日本語](#日本語) | [English](#english)
 
 ## 日本語
@@ -12,6 +14,7 @@
 
 - Python 3.8 以上
 - Linux などの Unix 系環境
+- GitHub Actions でのテスト環境: Ubuntu 26.04、Python 3.10〜3.14
 
 ### 使い方
 
@@ -56,6 +59,7 @@ $ bash ./test.bash
 
 - Python 3.8 or later
 - A Unix-like environment such as Linux
+- GitHub Actions test environment: Ubuntu 26.04, Python 3.10–3.14
 
 ### Usage
 
@@ -96,4 +100,5 @@ $ bash ./test.bash
 - このソフトウェアは BSD 3-Clause License の下で公開します。詳細は [LICENSE](LICENSE) を参照してください。
 - 実装には Python の標準ライブラリ `argparse`、`csv`、`json`、`math`、`sys` を使用しています。
 - 参考資料: [ロボットシステム学 第3回](https://tarolab-cit.github.io/lectures/robosys2026/lecture03.html)（標準入出力）、[第5回](https://tarolab-cit.github.io/lectures/robosys2026/lecture05.html)（著作権・ライセンス）、[第6回](https://tarolab-cit.github.io/lectures/robosys2026/lecture06.html)（テスト）、[第7回](https://tarolab-cit.github.io/lectures/robosys2026/lecture07.html)（GitHub Actions・README）。
-- 講義資料のコードは転用していません。
+- `csvstat` は独自に作成したコマンドであり、講義資料のコードを転用していません。
+- 既存の `plus_stdin` はロボットシステム学第3回の標準入力の例を基にしたものです。講義資料は [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) で公開されています。講義資料のオリジナル作者は [上田隆一](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)、本年度資料の改変者は鈴木太郎です。
